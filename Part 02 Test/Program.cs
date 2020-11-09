@@ -6,33 +6,31 @@ namespace Part_02_Test
     {
         static void Main(string[] args)
         {
-            DiamondOne();
+            DiamondOne(4);
         }
 
-        private static void DiamondOne()
+        private static void DiamondOne(int num)
         {
-            int i, j, count = 1, number;
-            Console.Write("Enter number of rows:");
-            number = int.Parse(Console.ReadLine());
-            count = number - 1;
-            for (j = 1; j <= number; j++)
+            for(int i = 1; i < num; i++) 
             {
-                for (i = 1; i <= count; i++)
+                for (int k = 0; k < num - i; k++)
                     Console.Write(" ");
-                count--;
-                for (i = 1; i <= 2 * j - 1; i++)
-                    Console.Write("*");
-                Console.WriteLine();
+                for (int j = 0; j < i; j++) 
+                {
+                    Console.Write("* ");
+                }
+                Console.WriteLine("");
             }
-            count = 1;
-            for (j = 1; j <= number - 1; j++)
+
+            for (int i = num; i > 0; i--)
             {
-                for (i = 1; i <= count; i++)
+                for (int k = 0; k < num - i; k++)
                     Console.Write(" ");
-                count++;
-                for (i = 1; i <= 2 * (number - j) - 1; i++)
-                    Console.Write("*");
-                Console.WriteLine();
+                for (int j = 0; j < i; j++)
+                {
+                    Console.Write("* ");
+                }
+                Console.WriteLine("");
             }
             Console.ReadLine();
         }
